@@ -1,0 +1,187 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 32 8% 20%; /* New body text color #32302E */
+
+    --card: 0 0% 100%;
+    --card-foreground: 32 8% 20%; /* New body text color */
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 32 8% 20%; /* New body text color */
+
+    /* Updated primary colors based on the uploaded palette */
+    --primary: 174 85% 18%; /* Deep teal green */
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 41 100% 65%; /* Golden yellow */
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 46 78% 85%; /* Light cream */
+    --muted-foreground: 32 8% 20%; /* New body text color */
+
+    --accent: 46 78% 85%; /* Warm beige */
+    --accent-foreground: 174 85% 18%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 46 65% 88%;
+    --input: 46 65% 88%;
+    --ring: 174 85% 18%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar colors updated with new palette */
+    --sidebar-background: 174 85% 18%; /* Deep teal green */
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 41 100% 65%; /* Golden yellow */
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 174 75% 22%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 174 65% 25%;
+    --sidebar-ring: 41 100% 65%;
+
+    /* Custom color variables for system components */
+    --noka-green-dark: 174 85% 18%;
+    --noka-green-medium: 174 75% 25%;
+    --noka-green-light: 174 65% 35%;
+    --noka-gold: 41 100% 65%;
+    --noka-gold-light: 41 90% 75%;
+    --noka-beige: 46 78% 75%;
+    --noka-beige-light: 46 78% 85%;
+    --noka-cream: 46 65% 92%;
+    --noka-text: 32 8% 20%; /* New body text color #32302E */
+  }
+
+  .dark {
+    --background: 174 85% 8%;
+    --foreground: 46 78% 95%;
+
+    --card: 174 75% 12%;
+    --card-foreground: 46 78% 95%;
+
+    --popover: 174 75% 12%;
+    --popover-foreground: 46 78% 95%;
+
+    --primary: 41 100% 65%;
+    --primary-foreground: 174 85% 8%;
+
+    --secondary: 174 65% 20%;
+    --secondary-foreground: 46 78% 95%;
+
+    --muted: 174 65% 15%;
+    --muted-foreground: 46 58% 70%;
+
+    --accent: 174 65% 18%;
+    --accent-foreground: 46 78% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 174 65% 18%;
+    --input: 174 65% 18%;
+    --ring: 41 100% 65%;
+
+    --sidebar-background: 174 85% 8%;
+    --sidebar-foreground: 46 78% 95%;
+    --sidebar-primary: 41 100% 65%;
+    --sidebar-primary-foreground: 174 85% 8%;
+    --sidebar-accent: 174 65% 15%;
+    --sidebar-accent-foreground: 46 78% 95%;
+    --sidebar-border: 174 65% 18%;
+    --sidebar-ring: 41 100% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background;
+    color: hsl(var(--noka-text));
+    font-family: 'Tajawal', 'Cairo', 'Amiri', Arial, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Tajawal', 'Cairo', 'Amiri', Arial, sans-serif;
+    color: hsl(var(--noka-text));
+  }
+
+  p, span, div, label {
+    color: hsl(var(--noka-text));
+  }
+}
+
+/* Custom utility classes for the new color palette */
+@layer utilities {
+  .bg-noka-green-dark {
+    background-color: hsl(var(--noka-green-dark));
+  }
+  .bg-noka-green-medium {
+    background-color: hsl(var(--noka-green-medium));
+  }
+  .bg-noka-green-light {
+    background-color: hsl(var(--noka-green-light));
+  }
+  .bg-noka-gold {
+    background-color: hsl(var(--noka-gold));
+  }
+  .bg-noka-gold-light {
+    background-color: hsl(var(--noka-gold-light));
+  }
+  .bg-noka-beige {
+    background-color: hsl(var(--noka-beige));
+  }
+  .bg-noka-beige-light {
+    background-color: hsl(var(--noka-beige-light));
+  }
+  .bg-noka-cream {
+    background-color: hsl(var(--noka-cream));
+  }
+  
+  .text-noka-green-dark {
+    color: hsl(var(--noka-green-dark));
+  }
+  .text-noka-green-medium {
+    color: hsl(var(--noka-green-medium));
+  }
+  .text-noka-gold {
+    color: hsl(var(--noka-gold));
+  }
+  .text-noka-beige {
+    color: hsl(var(--noka-beige));
+  }
+  .text-noka-text {
+    color: hsl(var(--noka-text));
+  }
+  
+  .border-noka-green-medium {
+    border-color: hsl(var(--noka-green-medium));
+  }
+  .border-noka-gold {
+    border-color: hsl(var(--noka-gold));
+  }
+  .border-noka-beige {
+    border-color: hsl(var(--noka-beige));
+  }
+
+  /* Gradient utilities */
+  .bg-noka-gradient {
+    background: linear-gradient(135deg, hsl(var(--noka-green-dark)), hsl(var(--noka-green-medium)));
+  }
+  .bg-noka-gradient-warm {
+    background: linear-gradient(135deg, hsl(var(--noka-gold)), hsl(var(--noka-beige)));
+  }
+  .bg-noka-gradient-light {
+    background: linear-gradient(135deg, hsl(var(--noka-beige-light)), hsl(var(--noka-cream)));
+  }
+}
